@@ -95,14 +95,14 @@ def main_posix(kind, library_ext):
 
     out = out.decode('latin1')
     print(out)
-    if not out.startswith('4.0.'):
-        msg = (
-            "Building llvmlite requires LLVM 4.0.x. Be sure to "
-            "set LLVM_CONFIG to the right executable path.\n"
-            "Read the documentation at http://llvmlite.pydata.org/ for more "
-            "information about building llvmlite.\n"
-            )
-        raise RuntimeError(msg)
+    # # if not out.startswith('4.0.'):
+    #     msg = (
+    #         "Building llvmlite requires LLVM 4.0.x. Be sure to "
+    #         "set LLVM_CONFIG to the right executable path.\n"
+    #         "Read the documentation at http://llvmlite.pydata.org/ for more "
+    #         "information about building llvmlite.\n"
+    #         )
+    #     raise RuntimeError(msg)
 
     # Get LLVM information for building
     libs = run_llvm_config(llvm_config, "--system-libs --libs all".split())
